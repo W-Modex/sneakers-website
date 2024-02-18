@@ -67,14 +67,14 @@ function Header({numberOfProducts}) {
                   <p className='rounded-[50%] text-white font-bold w-6 text-sm absolute z-20 top-[2%] bg-orange-400 text-center translate-x-7'>{cartState.productsInCart.length > 0 ? cartState.productsInCart.length : null}</p>
                 <img src={cartIcon} onClick={() => setCartOpened(prev => !prev)} className='w-10 cursor-pointer lg:w-12 hover:scale-110'/>
                 </div>
-                <a href="/"><img src={avatarImg} className='w-10 cursor-pointer lg:w-12 hover:scale-125 hover:border-orange-500 hover:border-2 rounded-[50%]' /></a>
+                <img src={avatarImg} className='w-10 cursor-pointer lg:w-12 hover:scale-125 hover:border-orange-500 hover:border-2 rounded-[50%]' />
             </div>
         </nav>
                 {cartOpened && (
                   <div className='bg-white rounded-lg top-[10%] absolute overflow-y-auto flex flex-col left-[12%] right-[12%] max-h-[300px] lg:max-w-[500px] lg:border-2 lg:border-slate-200 lg:rounded-xl lg:-right-[46%] z-30 m-auto'>
                     <p className='font-bold text-2xl p-8'>Cart</p>
                     <p className={`text-dark-grayish-blue text-xl text-center mt-8 mb-20 ${cartState.productsInCart.length > 0 ? 'hidden' : null}`}>Your cart is empty.</p>
-                    {cartState.productsInCart.map(product => (
+                    {cartState.productsInCart.map(product => product.productId !== 0 && (
                       <div className='p-5 gap-3 lg:gap-5 flex items-center'>
                         <img src={firstImg} className='max-w-[60px] lg:max-w-[80px] rounded-lg'/>
                         <div>
