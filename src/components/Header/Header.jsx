@@ -54,11 +54,11 @@ function Header({numberOfProducts}) {
                     <div className='absolute bg-white h-full max-w-[500px] w-[55%] top-0 left-0 z-50'>
                         <img src={closeIcon} onClick={() => setMenuOpened(false)} className={`w-8  cursor-pointer top-6 left-6 relative lg:hidden hover:scale-110 ${menuOpened ? null : 'hidden'}`} />
                   <div className='flex flex-col p-8 pt-16 text-2xl text-very-dark-blue font-bold'>
-                          <a href='/' className=' opacity-75 hover:opacity-100 cursor-pointer pb-10'>Collections</a>
-                          <a href='/' className=' opacity-75 hover:opacity-100 cursor-pointer pb-10'>Men</a>
-                          <a href='/' className=' opacity-75 hover:opacity-100 cursor-pointer pb-10 '>Women</a>
-                          <a href='/' className=' opacity-75 hover:opacity-100 cursor-pointer pb-10 '>About</a>
-                          <a href='/' className='border-b-4 border-transparent opacity-75 hover:opacity-100 cursor-pointer pb-10 '>Contact</a>
+                          <a href='/sneakers-website' className=' opacity-75 hover:opacity-100 cursor-pointer pb-10'>Collections</a>
+                          <a href='/sneakers-website' className=' opacity-75 hover:opacity-100 cursor-pointer pb-10'>Men</a>
+                          <a href='/sneakers-website' className=' opacity-75 hover:opacity-100 cursor-pointer pb-10 '>Women</a>
+                          <a href='/sneakers-website' className=' opacity-75 hover:opacity-100 cursor-pointer pb-10 '>About</a>
+                          <a href='/sneakers-website' className='border-b-4 border-transparent opacity-75 hover:opacity-100 cursor-pointer pb-10 '>Contact</a>
                   </div>
                     </div>
                     : null}
