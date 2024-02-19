@@ -36,7 +36,7 @@ function Header({numberOfProducts}) {
         <nav className='w-full max-w-[1440px] flex justify-between items-center'>
             <div className='flex lg:gap-24 h-6'>
             <img src={menuIcon} className='cursor-pointer mr-5 w-6 lg:hidden hover:scale-110' onClick={() => setMenuOpened(true)} />
-            <img src={logo} className='cursor-pointer lg:w-48' />
+            <img src={logo} className='cursor-pointer w-[120px] lg:w-48' />
             {windowWidth > 1024 ? 
             <div className='flex gap-8 -translate-y-1 text-2xl text-dark-grayish-blue'>
                 <p className='border-b-4 border-transparent opacity-75 hover:opacity-100 cursor-pointer pb-10 hover:border-orange-500'>Collections</p>
@@ -62,9 +62,9 @@ function Header({numberOfProducts}) {
                   </div>
                     </div>
                     : null}
-            <div className='flex justify-self-end gap-8'>
+            <div className='flex justify-self-end gap-4 lg:gap-8'>
                 <div>
-                  <p className='rounded-[50%] text-white font-bold w-6 text-sm absolute z-20 top-[2%] bg-orange-400 text-center translate-x-7'>{cartState.productsInCart.length > 0 ? cartState.productsInCart.length : null}</p>
+                  <p className='rounded-[50%] text-white font-bold w-6 text-sm absolute z-20 top-[2%] bg-orange-400 text-center translate-x-7'>{cartState.productsInCart.length > 1 ? cartState.productsInCart.length-1 : null}</p>
                 <img src={cartIcon} onClick={() => setCartOpened(prev => !prev)} className='w-10 cursor-pointer lg:w-12 hover:scale-110'/>
                 </div>
                 <img src={avatarImg} className='w-10 cursor-pointer lg:w-12 hover:scale-125 hover:border-orange-500 hover:border-2 rounded-[50%]' />
@@ -73,7 +73,7 @@ function Header({numberOfProducts}) {
                 {cartOpened && (
                   <div className='bg-white rounded-lg top-[10%] absolute overflow-y-auto flex flex-col left-[12%] right-[12%] max-h-[300px] lg:max-w-[500px] lg:border-2 lg:border-slate-200 lg:rounded-xl lg:-right-[46%] z-30 m-auto'>
                     <p className='font-bold text-2xl p-8'>Cart</p>
-                    <p className={`text-dark-grayish-blue text-xl text-center mt-8 mb-20 ${cartState.productsInCart.length > 0 ? 'hidden' : null}`}>Your cart is empty.</p>
+                    <p className={`text-dark-grayish-blue text-xl text-center mt-8 mb-20 ${cartState.productsInCart.length > 1 ? 'hidden' : null}`}>Your cart is empty.</p>
                     {cartState.productsInCart.map(product => product.productId !== 0 && (
                       <div className='p-5 gap-3 lg:gap-5 flex items-center'>
                         <img src={firstImg} className='max-w-[60px] lg:max-w-[80px] rounded-lg'/>
@@ -84,7 +84,7 @@ function Header({numberOfProducts}) {
                         <img src={deleteIcon} onClick={() => handleDelete(product)} className='h-5 cursor-pointer hover:scale-110'/>
                       </div>
                     ))}
-                    {cartState.productsInCart.length > 0 ? 
+                    {cartState.productsInCart.length > 1 ? 
                     <button onClick={() => alert('Not Added Yet.')} className='bg-orange-500 p-3 mx-5 mb-5 rounded-lg text-white text-xl font-bold '>
                       Checkout
                     </button>
